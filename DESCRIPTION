@@ -1,12 +1,14 @@
 Package: ghtravis
 Type: Package
 Title: Interfaces with GitHub API and Travis CI
-Version: 0.12.1
+Version: 0.13.0
 Author: John Muschelli
 Maintainer: John Muschelli <muschellij2@gmail.com>
 Description: Interfaces and compares things on 'GitHub'
       'API' and 'Travis' 'CI'.
-Imports: utils, devtools, yaml, httr, desc (>= 1.1.1.9003), remotes (>= 1.1.1.9000)
+Imports: utils, devtools (>= 2.0.0), 
+    yaml, httr, desc (>= 1.1.1.9003), 
+    remotes (>= 2.0)
 License: GPL-2
 Encoding: UTF-8
 LazyData: true

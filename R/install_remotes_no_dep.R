@@ -49,12 +49,20 @@ install_remotes_no_dep = function(
     if (verbose) {
       message(paste0("Installing Remote (dep = FALSE): ", x))
     }
+    # r = try({
+    #   devtools::install_github(
+    #   repo = x,
+    #   auth_token = github_pat(quiet = TRUE),
+    #   upgrade_dependencies = FALSE,
+    #   force = TRUE, ...)
+    # })
     r = try({
-      devtools::install_github(
-      repo = x,
-      auth_token = github_pat(quiet = TRUE),
-      upgrade_dependencies = FALSE,
-      force = TRUE, ...)
+      remotes::install_github(
+        repo = x,
+        auth_token = github_pat(quiet = TRUE),
+        upgrade_dependencies = FALSE,
+        upgrade = FALSE,
+        force = TRUE, ...)
     })
     if (!inherits(r, "try-error")) {
       if (drop) {
