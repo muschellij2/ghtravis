@@ -6,7 +6,8 @@
 \usage{
 install_remote_binaries(path = "DESCRIPTION", remotes = NULL,
   package = NULL, check_r_version = TRUE, force_sha = TRUE,
-  verbose = TRUE, method = "wget", ...)
+  verbose = TRUE, method = ifelse(.Platform$OS.type == "unix", "wget",
+  "auto"), ...)
 }
 \arguments{
 \item{path}{Path to DESCRIPTION file
@@ -39,6 +40,6 @@ drops them from Remotes field
 \examples{
 \dontrun{
 path = example_description_file()
-install_remote_binaries(path = path)
+install_remote_binaries(path = path, method = "wget")
 }
 }

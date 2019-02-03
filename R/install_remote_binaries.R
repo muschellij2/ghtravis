@@ -22,7 +22,7 @@
 #' @examples
 #' \dontrun{
 #' path = example_description_file()
-#' install_remote_binaries(path = path)
+#' install_remote_binaries(path = path, method = "wget")
 #' }
 #' @importFrom utils install.packages installed.packages remove.packages
 # @param update_only Should only packages needing update be installed?
@@ -35,7 +35,7 @@ install_remote_binaries = function(
   force_sha = TRUE,
   # update_only = FALSE,
   verbose = TRUE,
-  method = "wget",
+  method = ifelse(.Platform$OS.type == "unix", "wget", "auto"),
   ...
 ) {
 

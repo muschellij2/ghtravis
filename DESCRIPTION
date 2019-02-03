@@ -1,9 +1,14 @@
 Package: ghtravis
 Type: Package
 Title: Interfaces with GitHub API and Travis CI
-Version: 0.13.0
-Author: John Muschelli
-Maintainer: John Muschelli <muschellij2@gmail.com>
+Version: 0.13.1
+Authors@R: c(
+    person(given = "John",
+           family = "Muschelli",
+           role = c("aut", "cre"),
+           email = "muschellij2@gmail.com",
+           comment = c(ORCID = "0000-0001-6469-1750"))
+    )
 Description: Interfaces and compares things on 'GitHub'
       'API' and 'Travis' 'CI'.
 Imports: utils, devtools (>= 2.0.0), 
@@ -13,5 +18,5 @@ License: GPL-2
 Encoding: UTF-8
 LazyData: true
 Remotes: muschellij2/desc
-RoxygenNote: 6.1.0
+RoxygenNote: 6.1.1
 Suggests: covr
