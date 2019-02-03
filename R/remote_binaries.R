@@ -29,6 +29,8 @@ remote_binaries = function(
   if (is.null(remotes)) {
     remotes = get_remotes(path)
   }
+  remotes = sub(";$", "", remotes)
+  remotes = remotes[ !trimws(remotes) %in% c("", ";") ]
   packs = parse_remotes(remotes)
   packs = sapply(packs, `[[`, "repo")
   urls = lapply(remotes, function(x) {
