@@ -72,7 +72,18 @@ install_remote_binaries = function(
                          " package binaries"))
         }
 
-        destfile = file.path(tempdir(), basename(url))
+        outfile = basename(url)
+        r_versions = expand.grid(major = 3:5, minor = 0:10)
+        r_versions$version = paste0("_R", r_versions$major,
+                                    "\\.",
+                                    r_versions$minor)
+        r_versions = r_versions$version
+        r_versions = paste0("(", paste(r_versions, collapse = "|"),
+                            ")")
+        outfile = sub(r_versions, "", outfile)
+
+        # destfile = file.path(tempdir(), basename(url))
+        destfile = file.path(tempdir(), outfile)
 
         download.file(
           url, destfile,
