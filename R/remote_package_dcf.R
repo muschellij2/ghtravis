@@ -11,14 +11,18 @@
 #' @examples
 #' get_remote_package_dcf("stnava/ANTsRCore")
 #' remote_package_dcf("stnava/ANTsRCore")
+#' remote_package_dcf("stnava/ANTsRCore")
+
 get_remote_package_dcf = function(
   remotes,
   pat = NULL,
-  url = "https://github.com",
+  url = c("https://github.com", "https://api.github.com"),
   ...) {
   if (is.null(pat)) {
     pat = devtools::github_pat(quiet = TRUE)
   }
+
+  url = url[1]
 
   if (length(remotes) > 1) {
     res = vapply(remotes, get_remote_package_dcf, FUN.VALUE = NA_character_,
@@ -30,17 +34,42 @@ get_remote_package_dcf = function(
   remote = parse_one_remote(remotes)
 
   tmp <- tempfile()
-  path <- paste(c(remote$username,
-                  remote$repo, "raw", remote$ref,
-                  remote$subdir, "DESCRIPTION"),
-                collapse = "/")
+  api_call = grepl("api", tolower(url))
+  if (!api_call) {
+    path <- paste(c(
+      remote$username,
+      remote$repo, "raw", remote$ref,
+      remote$subdir, "DESCRIPTION"),
+      collapse = "/")
+    ctype = httr::content_type("text/plain")
+
+  } else {
+    path <- paste(c(
+      "repos",
+      remote$username,
+      remote$repo, "contents",
+      remote$subdir, "DESCRIPTION"),
+      collapse = "/")
+    path = paste0(path, "?ref=", remote$ref)
+    ctype = httr::content_type_json()
+  }
   req <- httr::GET(url, path = path,
                    github_auth(pat),
                    httr::write_disk(path = tmp),
-                   httr::content_type("text/plain"),
+                   ctype,
                    ...)
   if (httr::status_code(req) >= 400) {
     tmp = NA_character_
+  } else {
+    if (api_call) {
+      if (!requireNamespace("base64enc", quietly = TRUE)) {
+        stop("base64enc needed for API calls")
+      }
+      data = httr::content(req)$content
+      data = base64enc::base64decode(what = data)
+      data = rawToChar(data)
+      writeLines(data, tmp)
+    }
   }
   names(tmp) = remotes
   return(tmp)

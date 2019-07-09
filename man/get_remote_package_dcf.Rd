@@ -6,8 +6,8 @@
 \alias{has_remote_dcf}
 \title{Read Remote Package DESCRIPTION file}
 \usage{
-get_remote_package_dcf(remotes, pat = NULL, url = "https://github.com",
-  ...)
+get_remote_package_dcf(remotes, pat = NULL,
+  url = c("https://github.com", "https://api.github.com"), ...)
 
 remote_package_dcf(...)
 
@@ -30,5 +30,6 @@ Read Remote Package DESCRIPTION file
 }
 \examples{
 get_remote_package_dcf("stnava/ANTsRCore")
+remote_package_dcf("stnava/ANTsRCore")
 remote_package_dcf("stnava/ANTsRCore")
 }
