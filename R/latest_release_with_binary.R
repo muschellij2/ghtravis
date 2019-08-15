@@ -73,6 +73,9 @@ latest_release_with_binary = function(
     if (any(check)) {
       check[is.na(check)] = FALSE
       ddf = ddf[ check, ]
+    } else {
+      # change to fix ITKR installation future R version
+      return(NA)
     }
   }
   # ord = order(ddf$asset_created_at, ddf$asset_updated_at, decreasing = TRUE)

@@ -1,7 +1,7 @@
 Package: ghtravis
 Type: Package
 Title: Interfaces with GitHub API and Travis CI
-Version: 0.14.0
+Version: 0.14.1
 Authors@R: c(
     person(given = "John",
            family = "Muschelli",
