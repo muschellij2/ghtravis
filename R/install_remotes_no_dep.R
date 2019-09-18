@@ -17,7 +17,7 @@
 #' @examples \dontrun{
 #'   install_remotes_no_dep()
 #' }
-#' @importFrom devtools install_github
+#' @importFrom remotes install_github
 install_remotes_no_dep = function(
   path = "DESCRIPTION",
   package = NULL,
