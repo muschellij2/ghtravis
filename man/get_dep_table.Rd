@@ -4,8 +4,11 @@
 \alias{get_dep_table}
 \title{Get Dependency Table}
 \usage{
-get_dep_table(path = "DESCRIPTION", dependencies = c("Depends",
-  "Imports", "LinkingTo", "Suggests"), limit_compare = FALSE)
+get_dep_table(
+  path = "DESCRIPTION",
+  dependencies = c("Depends", "Imports", "LinkingTo", "Suggests"),
+  limit_compare = FALSE
+)
 }
 \arguments{
 \item{path}{Path to DESCRIPTION file}

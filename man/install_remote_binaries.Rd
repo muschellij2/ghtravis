@@ -4,10 +4,16 @@
 \alias{install_remote_binaries}
 \title{Install Binaries from Remotes}
 \usage{
-install_remote_binaries(path = "DESCRIPTION", remotes = NULL,
-  package = NULL, check_r_version = TRUE, force_sha = TRUE,
-  verbose = TRUE, method = ifelse(.Platform$OS.type == "unix", "wget",
-  "auto"), ...)
+install_remote_binaries(
+  path = "DESCRIPTION",
+  remotes = NULL,
+  package = NULL,
+  check_r_version = TRUE,
+  force_sha = TRUE,
+  verbose = TRUE,
+  method = ifelse(.Platform$OS.type == "unix", "wget", "auto"),
+  ...
+)
 }
 \arguments{
 \item{path}{Path to DESCRIPTION file

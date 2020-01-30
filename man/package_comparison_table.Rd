@@ -5,8 +5,10 @@
 \alias{update_these_packages}
 \title{Get Comparison Table from Dependencies}
 \usage{
-package_comparison_table(path = "DESCRIPTION",
-  dependencies = c("Depends", "Imports", "LinkingTo"))
+package_comparison_table(
+  path = "DESCRIPTION",
+  dependencies = c("Depends", "Imports", "LinkingTo")
+)
 
 update_these_packages(...)
 }

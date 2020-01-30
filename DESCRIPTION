@@ -1,7 +1,7 @@
 Package: ghtravis
 Type: Package
 Title: Interfaces with GitHub API and Travis CI
-Version: 0.14.2
+Version: 0.15.0
 Authors@R: c(
     person(given = "John",
            family = "Muschelli",
@@ -18,7 +18,7 @@ License: GPL-2
 Encoding: UTF-8
 LazyData: true
 Remotes: muschellij2/desc
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.1
 Suggests: 
     covr,
     base64enc

@@ -59,7 +59,12 @@ get_remote_package_dcf = function(
                    ctype,
                    ...)
   if (httr::status_code(req) >= 400) {
-    tmp = NA_character_
+    if (api_call) {
+      tmp = get_remote_package_dcf(remotes,
+                                   pat = pat, url = "https://github.com")
+    } else {
+      tmp = NA_character_
+    }
   } else {
     if (api_call) {
       if (!requireNamespace("base64enc", quietly = TRUE)) {

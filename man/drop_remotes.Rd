@@ -4,8 +4,13 @@
 \alias{drop_remotes}
 \title{Drop Remotes from DESCRIPTION}
 \usage{
-drop_remotes(path = "DESCRIPTION", drop_remotes = NULL,
-  reorder = FALSE, verbose = TRUE, ...)
+drop_remotes(
+  path = "DESCRIPTION",
+  drop_remotes = NULL,
+  reorder = FALSE,
+  verbose = TRUE,
+  ...
+)
 }
 \arguments{
 \item{path}{Path to DESCRIPTION file}

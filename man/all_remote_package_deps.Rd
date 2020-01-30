@@ -7,12 +7,19 @@
 \alias{install_missing_remote_deps}
 \title{Get Remote Package Dependencies}
 \usage{
-all_remote_package_deps(path = "DESCRIPTION", remotes = NULL,
-  verbose = TRUE, ..., dependencies = c("Depends", "Imports",
-  "LinkingTo", "Suggests"), exclude_remotes = TRUE)
+all_remote_package_deps(
+  path = "DESCRIPTION",
+  remotes = NULL,
+  verbose = TRUE,
+  ...,
+  dependencies = c("Depends", "Imports", "LinkingTo", "Suggests"),
+  exclude_remotes = TRUE
+)
 
-remote_package_deps(..., dependencies = c("Depends", "Imports",
-  "LinkingTo", "Suggests"))
+remote_package_deps(
+  ...,
+  dependencies = c("Depends", "Imports", "LinkingTo", "Suggests")
+)
 
 missing_remote_deps(path = "DESCRIPTION", verbose = TRUE, ...)
 

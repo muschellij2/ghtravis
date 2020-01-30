@@ -4,8 +4,13 @@
 \alias{remote_binaries}
 \title{Get Binaries from Remotes}
 \usage{
-remote_binaries(remotes = NULL, path = "DESCRIPTION", package = NULL,
-  verbose = TRUE, ...)
+remote_binaries(
+  remotes = NULL,
+  path = "DESCRIPTION",
+  package = NULL,
+  verbose = TRUE,
+  ...
+)
 }
 \arguments{
 \item{remotes}{Remotes to get the binaries for}

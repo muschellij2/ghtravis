@@ -4,9 +4,15 @@
 \alias{install_remotes_no_dep}
 \title{Returns the specific package from Remotes}
 \usage{
-install_remotes_no_dep(path = "DESCRIPTION", package = NULL,
-  reorder = TRUE, drop = TRUE, verbose = TRUE, mustInstall = FALSE,
-  ...)
+install_remotes_no_dep(
+  path = "DESCRIPTION",
+  package = NULL,
+  reorder = TRUE,
+  drop = TRUE,
+  verbose = TRUE,
+  mustInstall = FALSE,
+  ...
+)
 }
 \arguments{
 \item{path}{Path to DESCRIPTION file}

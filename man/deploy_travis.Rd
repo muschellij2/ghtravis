@@ -4,8 +4,12 @@
 \alias{deploy_travis}
 \title{Rewrite Travis for Deployment}
 \usage{
-deploy_travis(api_key, path = "DESCRIPTION",
-  travis_file = ".travis.yml", user = "neuroconductor")
+deploy_travis(
+  api_key,
+  path = "DESCRIPTION",
+  travis_file = ".travis.yml",
+  user = "neuroconductor"
+)
 }
 \arguments{
 \item{api_key}{API Key to Travis Key, Secure}

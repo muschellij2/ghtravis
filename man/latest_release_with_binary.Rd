@@ -4,8 +4,14 @@
 \alias{latest_release_with_binary}
 \title{Get the Latest Binary for a repository}
 \usage{
-latest_release_with_binary(repo, pat = NULL, verbose = TRUE,
-  check_r_version = TRUE, force_sha = TRUE, ...)
+latest_release_with_binary(
+  repo,
+  pat = NULL,
+  verbose = TRUE,
+  check_r_version = TRUE,
+  force_sha = TRUE,
+  ...
+)
 }
 \arguments{
 \item{repo}{Remote repository name}
