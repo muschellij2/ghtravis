@@ -1,7 +1,7 @@
 Package: ghtravis
 Type: Package
 Title: Interfaces with GitHub API and Travis CI
-Version: 0.15.0
+Version: 0.15.1
 Authors@R: c(
     person(given = "John",
            family = "Muschelli",
@@ -10,7 +10,7 @@ Authors@R: c(
            comment = c(ORCID = "0000-0001-6469-1750"))
     )
 Description: Interfaces and compares things on 'GitHub'
-      'API' and 'Travis' 'CI'.
+      'API' and 'Travis' 'CI' or 'GitHub` Actions.
 Imports: utils, devtools (>= 2.0.0), 
     yaml, httr, desc (>= 1.1.1.9003), 
     remotes (>= 2.0)
@@ -18,7 +18,7 @@ License: GPL-2
 Encoding: UTF-8
 LazyData: true
 Remotes: muschellij2/desc
-RoxygenNote: 7.0.1
+RoxygenNote: 7.1.1
 Suggests: 
     covr,
     base64enc
