@@ -54,7 +54,7 @@ get_remote_package_dcf = function(
     ctype = httr::content_type_json()
   }
   req <- httr::GET(url, path = path,
-                   github_auth(pat),
+                   if (api_call) github_auth(pat),
                    httr::write_disk(path = tmp),
                    ctype,
                    ...)
