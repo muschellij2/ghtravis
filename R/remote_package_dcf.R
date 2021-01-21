@@ -35,6 +35,11 @@ get_remote_package_dcf = function(
 
   tmp <- tempfile()
   api_call = grepl("api", tolower(url))
+  if (api_call) {
+    if (!requireNamespace("base64enc", quietly = TRUE)) {
+      stop("base64enc needed for API calls")
+    }
+  }
   if (!api_call) {
     path <- paste(c(
       remote$username,
@@ -67,14 +72,14 @@ get_remote_package_dcf = function(
     }
   } else {
     if (api_call) {
-      if (!requireNamespace("base64enc", quietly = TRUE)) {
-        stop("base64enc needed for API calls")
-      }
       data = httr::content(req)$content
       data = base64enc::base64decode(what = data)
       data = rawToChar(data)
       writeLines(data, tmp)
     }
+  }
+  if (is.na(tmp)) {
+    warning("Request to GitHub API did not result in a DCF file download")
   }
   names(tmp) = remotes
   return(tmp)
