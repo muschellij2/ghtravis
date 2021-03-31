@@ -14,10 +14,10 @@
 #'
 #' @examples
 #' repo = "stnava/ANTsR"
-#' res = latest_release_with_binary(repo)
+#' res = latest_release_with_binary(repo, check_r_version = FALSE)
 #' res
-#' repo = "neuroconductor/gifti"
-#' res = latest_release_with_binary(repo)
+#' repo = "muschellij2/neurobase"
+#' res = latest_release_with_binary(repo, check_r_version = FALSE)
 #' res #'
 #' @importFrom httr GET content stop_for_status authenticate
 #' @importFrom devtools github_pat
@@ -48,7 +48,7 @@ latest_release_with_binary = function(
   ddf = df
   ddf = ddf[ grep(release_search_ext(), ddf$asset_name),]
 
-  if (!(ref %in% c("master", ""))) {
+  if (!(ref %in% c("master", "", "HEAD"))) {
     if (!(ref %in% ddf$commit.sha)) {
       warning(paste0(
         "SHA was given for repo: ", repo, ", but no release associated",

@@ -36,9 +36,9 @@ Parses a remote and gets a URL for a binary release
 }
 \examples{
 repo = "stnava/ANTsR"
-res = latest_release_with_binary(repo)
+res = latest_release_with_binary(repo, check_r_version = FALSE)
 res
-repo = "neuroconductor/gifti"
-res = latest_release_with_binary(repo)
+repo = "muschellij2/neurobase"
+res = latest_release_with_binary(repo, check_r_version = FALSE)
 res #'
 }
