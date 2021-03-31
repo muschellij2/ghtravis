@@ -10,6 +10,8 @@ get_remote_package_dcf(
   remotes,
   pat = NULL,
   url = c("https://github.com", "https://api.github.com"),
+  output_directory = NULL,
+  overwrite = FALSE,
   ...
 )
 
@@ -24,6 +26,11 @@ has_remote_dcf(remotes, pat = NULL, url = "https://github.com", ...)
 
 \item{url}{URL for repo - github}
 
+\item{output_directory}{Output directory for the description file to download to,}
+
+\item{overwrite}{overwrite the file if exists.  Only really relevant if
+\code{output_directory} is not \code{NULL}}
+
 \item{...}{additional arguments to pass to \code{\link{GET}}}
 }
 \value{
@@ -34,6 +41,8 @@ Read Remote Package DESCRIPTION file
 }
 \examples{
 get_remote_package_dcf("stnava/ANTsRCore")
+out = get_remote_package_dcf("stnava/ANTsRCore", output_directory = tempdir())
+out = get_remote_package_dcf("stnava/ANTsRCore", output_directory = tempdir())
 remote_package_dcf("stnava/ANTsRCore")
-remote_package_dcf("stnava/ANTsRCore")
+remote_package_dcf("stnava/ANTsRCore", output_directory = tempdir())
 }
