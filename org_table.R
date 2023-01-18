@@ -8,7 +8,7 @@ github_auth = ghtravis:::github_auth
 
 org_table = function(organization, pat = NULL, ...) {
   if (is.null(pat)) {
-    pat = devtools::github_pat(quiet = TRUE)
+    pat = github_pat(quiet = TRUE)
   }
 
   tag_url = paste0("https://api.github.com/orgs/", organization, "/repos")
@@ -18,8 +18,8 @@ org_table = function(organization, pat = NULL, ...) {
   httr::stop_for_status(tag_res)
   httr::message_for_status(tag_res)
   tag_content = httr::content(tag_res)
-  
-  
+
+
   tag_content = bind_list(tag_content)
   # if (!is.null(tag_content)) {
   #   if (ncol(tag_content) > 0) {

@@ -16,7 +16,6 @@
 #' binary_release_table(repo)
 #' binary_release_table("muschellij2/ANTsR")
 #' @importFrom httr GET content stop_for_status authenticate
-#' @importFrom devtools github_pat
 binary_release_table = function(
   repo,
   pat = NULL,
@@ -26,7 +25,7 @@ binary_release_table = function(
 
   xrepo = repo
   if (is.null(pat)) {
-    pat = devtools::github_pat(quiet = TRUE)
+    pat = github_pat(quiet = TRUE)
   }
   info = parse_one_remote(repo)
   user = info$username
@@ -120,7 +119,7 @@ binary_table_no_tags = function(
   repo = paste0(user, "/", package)
 
   if (is.null(pat)) {
-    pat = devtools::github_pat(quiet = TRUE)
+    pat = github_pat(quiet = TRUE)
   }
   url = paste0("https://api.github.com/repos/", repo, "/releases")
 

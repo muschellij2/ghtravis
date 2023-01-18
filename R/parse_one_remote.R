@@ -33,7 +33,7 @@ parse_one_remote <- function(x) {
   )
   args = list(repo)
   if (tolower(type) == "github") {
-    args$auth_token = devtools::github_pat(quiet = TRUE)
+    args$auth_token = github_pat(quiet = TRUE)
   }
   do.call(fun, args = args)
 }
