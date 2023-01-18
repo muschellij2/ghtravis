@@ -25,7 +25,7 @@ get_remote_package_dcf = function(
   overwrite = FALSE,
   ...) {
   if (is.null(pat)) {
-    pat = devtools::github_pat(quiet = TRUE)
+    pat = github_pat(quiet = TRUE)
   }
 
   url = url[1]
@@ -132,7 +132,7 @@ has_remote_dcf = function(
   url = "https://github.com",
   ...) {
   if (is.null(pat)) {
-    pat = devtools::github_pat(quiet = TRUE)
+    pat = github_pat(quiet = TRUE)
   }
   if (length(remotes) > 1) {
     res = vapply(remotes, has_remote_dcf, FUN.VALUE = logical(1),

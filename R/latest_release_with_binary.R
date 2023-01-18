@@ -20,7 +20,6 @@
 #' res = latest_release_with_binary(repo, check_r_version = FALSE)
 #' res #'
 #' @importFrom httr GET content stop_for_status authenticate
-#' @importFrom devtools github_pat
 latest_release_with_binary = function(
   repo,
   pat = NULL,
